@@ -1,0 +1,25 @@
+<div style="width : 40%; left : 30%;" class="form-container">
+  <form method="POST" action="/hire">
+    <div class="error-msg"><%= messages.error %></div>
+    <input type="text" name="firstName" id="firstName" value="<%= (user)? user.firstName : '' %>" required placeholder="First Name"/>
+    <input name="lastName" type="text" id="lastName" value="<%= (user)? user.lastName : '' %>" required placeholder="Last Name">
+    <input name="email" type="email" id="email" value="<%= (user)? user.email : ''  %>" required placeholder="Email so I can contact you.">
+    <input style="height : 70px;" id="msg" name="hiringReason" type="text" required placeholder="Why do you wanna hire me?">
+    <button style="width : 100px" class="hireBtn" type="submit">Hire</button>
+</div>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script>
+  emailjs.init("user_pPrLRdzZbCZzzOvdUCiaT");
+  let hireBtn = document.querySelector('.hireBtn');
+  hireBtn.onclick = () => {
+    emailjs.send("service_yq7cxsy","template_qwmdi49",{
+      fullName: firstName.value + lastName.value,
+      msg : msg.value,
+      email: email.value,
+    });
+  }
+
+  </script>

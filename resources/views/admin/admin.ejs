@@ -1,0 +1,74 @@
+<div style=" text-align: center; position : relative; top:100px;" class="hero-img welcome-admin">
+  <i style="color : white" class="fas fa-user-ninja"></i>
+  <p style="color:white; padding-top : 10px">Welcome Nikesh! I hope your having a good day</p>
+</div>
+
+<div style="position : relative; top : 100px ; left : 0;">
+  <% if(! hires.length) { %>
+    <div style="background : red;" class="newHires">
+      <span><%= hires.length %></span>
+      <p>New hires.</p>
+    </div>
+    <% } else {%>
+    <div class="newHires">
+      <span><%= hires.length %></span>
+      <p>New hires.<br> Good job!</p>
+    </div>
+    <% } %>
+
+      <% if(online.length <= 1) { %>
+        <div style="background : red;" class="online">
+          <span>No</span>
+          <p>Users online</p>
+        </div>
+        <% } else {%>
+        <div class="online">
+          <span><%= online.length - 1 %></span>
+          <p>Users online</p>
+        </div>
+        <% } %>
+
+    <div style ="text-align : center; margin : 10px;" class="error-msg"><%= messages.error %></div>
+
+
+    <div class="userMessages">
+      <h3 style="text-align : center;">Messages sent to you by users:</h3>
+      <% if(!messages.length) { %>
+        <div class="empty" style="text-align: center; font-size: 80px; padding: 20px;"> <i style="color : red" class="fas fa-luggage-cart"></i> </div>
+        <p style="text-align : center; color : white; padding : 5px;">You don't have any messages</p>
+        <% } else { %>
+      <ul>
+        <% messages.forEach(msg => { %>
+          <li style="transition : opacity 1.5s ease; position : relative; margin : 10px 0;">
+            <div style="color : white"><%= msg.askMeEmail %></div>
+            <div><%= msg.askMeQuestion %></div>
+            <a data-msg="<%= JSON.stringify(msg) %>" style=" transition : background-color 1s ease; position: absolute; left : 90%; font-size: 20px; top : 43%; color : red; display : block;" onclick="dismissMessages(event)" href=""><i style="" class="fas fa-window-close"></i></a>
+            -----------------------------------------------------------
+          </li>
+        <% }) %>
+      </ul>
+      <% } %>
+    </div>
+
+
+    <div class="hirers" style="background: white; width: 70%; padding: 40px; margin: 50px auto;">
+      <h3 style="text-align:center;">New hires:</h3>
+      <% if(!hires.length) { %>
+        <div class="empty" style="text-align: center; font-size: 80px; padding: 20px;"> <i style="color : red" class="fas fa-shopping-cart"></i> </div>
+        <p style="text-align : center; color : #4BB543; padding : 5px;">You don't have any new hires. We'll get through this.</p>
+        <% } else { %>
+      <ul>
+      <% hires.forEach(hire => { %>
+        <li style="position: relative; transition : opacity 1.5s ease, transform 2s ease; border-bottom : 1px black solid; margin-top : 5px; padding : 20px;">
+          <div style="color: orange; font-weight : bold"><%= hire.firstName + ' ' + hire.lastName %></div>
+          <div style="color : darkcyan"><%= hire.email %> </div>
+          <div><%= hire.hiringReason %></div>
+          <a style="transition : color 1s ease; position: absolute; left : 90%; font-size: 25px; top : 20%; color : red; display : block;" data-hire="<%= JSON.stringify(hire) %>" onclick="dismissHires(event)" href=""><i class="fas fa-window-close"></i></a>
+        </li>
+      <% }) %>
+      </ul>
+      <% } %>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+<script src="/js/admin/admin.js"></script>

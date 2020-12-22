@@ -1,0 +1,14 @@
+<div class="form-container">
+  <form action="/register" method="POST">
+    <div class="error-msg"> <%= messages.error %> </div>
+    <input name="firstName" value="<%= messages.firstName %>" type="text" required placeholder="First Name">
+    <input name="lastName" value="<%= messages.lastName %>" type="text" required placeholder="Last Name">
+    <input name="email" type="email" value="<%= messages.email %>" required placeholder="Email">
+    <input name="password" type="password" required placeholder="Password">
+    <input name="repassword" type="password" required placeholder="Reenter your password">
+    <div class="createAccountMsg">
+      <a href="/login">Already have an account? Sign in.</a>
+    </div>
+    <button class="hireBtn" type="submit">Sign Up</button>
+  </form>
+</div>

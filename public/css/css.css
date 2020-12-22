@@ -1,0 +1,449 @@
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+
+body{
+  transition: opacity 1s ease;
+  background: black;
+}
+
+header{
+  height: 600px;
+  background : black;
+  position : relative;
+  clip-path : polygon(0 0, 100% 0, 100% 100%, 90% 100%, 80% 90%, 65% 100%, 0 100%);
+}
+
+.askMe{
+  position: absolute;
+  top : 25%;
+  left : 5%;
+  color : white;
+  transition: transform 2s ease;
+}
+
+.askMe h3 i{
+  padding : 10px 0;
+  transition: color 1s ease;
+}
+
+.askMe h3 i:hover{
+  color : magenta;
+  transition: transform 1.5s ease;
+  transform: scale(1.2);
+}
+
+.askMe h3{
+  color : white;
+  text-align: center;
+}
+
+.askMe form{
+  position: absolute;
+  padding : 10px;
+  top : 100%;
+  left : -20%;
+  transition: opacity 3s ease;
+  opacity: 0;
+  display : none;
+  text-align: center;
+}
+
+.askMe form input{
+  display : block;
+  width : 220px;
+  padding : 5px;
+  font-size : 15px;
+  margin : 20px 0;
+  border : 0;
+  color : grey;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.useless-link{
+  width : 300px;
+  padding : 20px;
+  text-align: center;
+  color : magenta;
+  background : rgba(230, 230, 230, 0.4);
+  position: absolute;
+  top : 30%;
+  left : 35%;
+}
+
+.askMeQuestion{
+  height : 50px;
+}
+
+.askMe button{
+  background: darkmagenta;
+  color : white;
+  padding : 5px;
+  border-radius: 5px;
+  border : 0;
+}
+
+
+@keyframes shake {
+  50% {
+    transform : rotate(50deg);
+  }
+  80%{
+    transform : rotate(-50deg);
+    color : yellow;
+  }
+}
+
+.askMe button:hover{
+  background: white;
+  color : magenta;
+}
+
+nav{
+  text-align : right;
+  color : white;
+  padding : 30px 0;
+  background: black;
+}
+
+.fas{
+  padding : 0px 5px;
+}
+
+nav ul li{
+  display : inline-block;
+  width : 130px;
+  padding : 0 20px;
+  text-aling : center;
+}
+
+nav ul li a{
+  color : white;
+  font-size : 17px;
+  text-decoration: none;
+}
+
+nav ul li:hover a{
+  color : magenta;
+}
+
+.logo-wrapper{
+  color : white;
+  font-size : 25px;
+  position: absolute;
+  padding : 10px;
+  left : 10px;
+  padding-right : 50px;
+  top : 10px;
+  clip-path : polygon(0 0, 40% 0, 59% 45%, 60% 0, 100% 0, 80% 100%, 0 100%);
+  border : brown solid 2px;
+}
+
+.rickroll{
+  animation : rickroll 5s ease;
+}
+
+@keyframes rickroll {
+  50%{
+    transform : rotate(360deg);
+  }
+}
+
+.prof{
+  position: absolute;
+  top: 15px;
+  left : 205px;
+}
+
+.prof img{
+  height: 50px;
+  border-radius: 50%;
+}
+
+@keyframes bounce {
+  100%{
+    transform : translateY(-20px) translateX(0px);
+  }
+}
+
+.hero-text{
+   color : cornsilk;
+   position : absolute;
+   top: 40%;
+   left: 27%;
+   text-align : center;
+}
+
+.hero-img{
+  position: relative;
+  animation : bounce 2s alternate infinite;
+}
+
+.hero-img i{
+  font-size : 160px;
+}
+
+.hireBtn{
+  background : #24A0ed;
+  color : white;
+  border : 0;
+  border-radius : 5px;
+  padding : 10px;
+  font-size : 15px;
+  word-spacing: 3px;
+  text-align: center;
+  margin-top : 10px;
+  display: inline-block;
+}
+
+.hireBtn:hover{
+  background : white;
+  color : magenta;
+}
+
+.alert-msgs{
+  width: 300px;
+  padding: 15px;
+  padding-bottom: 60px;
+  text-align: center;
+  position: absolute;
+  top: -90%;
+  opacity : 0;
+  color: black;
+  background: white;
+  transition: opacity 2s ease;
+  font-size : 14px;
+  right: 21%;
+  clip-path : polygon(0 0, 100% 0, 100% 70%, 80% 70%, 65% 100%, 75% 70%, 0 70%);
+}
+
+.hero-text p{
+  margin : 10px 0;
+  transition : transform 2s ease;
+  transform : translateX(-100px);
+}
+
+
+.intro{
+  padding : 130px 70px 60px 70px;
+  width : 90%;
+  margin : auto;
+}
+
+.intro div{
+  text-align : center;
+  font-size : 15px;
+}
+
+.intro div i{
+  font-size : 30px;
+}
+
+.intro div h3{
+  margin : 15px 0;
+}
+
+.lazy-container{
+  height : 520px;
+  clip-path : polygon(0 0 , 45% 0, 50% 5%, 55% 0, 100% 0, 100% 100%, 0 100%);
+  background : #301934;
+  position : relative;
+}
+
+.lazy-loader{
+  width : 50%;
+  position : absolute;
+  text-align : center;
+  opacity : 0;
+  transition : opacity 3s ease, transform 3s ease;
+}
+
+.lazy-img{
+  color : lemonchiffon;
+  font-size : 40px;
+  padding : 10px;
+}
+
+.lazy-img i{
+  border : 2px white solid;
+  padding : 5px;
+  border-radius: 3px;
+}
+
+.lazy-loader p{
+  color : white;
+  font-size : 15px;
+}
+
+.lazy-a{
+  left : 5%;
+  top : 10%;
+  transform : translateX(40%);
+}
+
+.lazy-b{
+  left : 25%;
+  top : 40%;
+  transform : translateX(-40%);
+}
+
+.lazy-c{
+  left : 45%;
+  top : 70%;
+  transform : translateX(10%);
+}
+
+.lazy-img:hover i {
+  transition : transform 1.5s ease;
+  transform : scale(1.4);
+}
+
+.form-container{
+  position : absolute;
+  top : 28%;
+  left : 34%;
+  background : rgba(255, 255, 255, 0.05);
+  box-shadow: 2px 15px 35px -9px rgba(255,255,255,0.5);
+ -webkit-box-shadow: 2px 15px 35px -9px rgba(255,255,255,0.5);
+ -moz-box-shadow: 2px 15px 35px -9px rgba(255,255,255,0.5);
+ padding : 10px;
+ margin-bottom: 50px;
+ width : 30%;
+}
+
+.form-container form{
+  padding : 10px;
+  text-align: center;
+}
+
+.form-container form input{
+  width : 80%;
+  border-radius : 4px;
+  border : 0;
+  padding : 6px;
+  text-align: center;
+  font-size : 15px;
+  margin : 10px auto;
+}
+
+.createAccountMsg{
+  padding-top : 15px;
+  color : white;
+}
+
+.createAccountMsg:hover a{
+  color : orange;
+}
+
+.float{
+  color : white;
+  position : absolute;
+  top : 70% ;
+  left:10%;
+  z-index : -1;
+  animation : float 25s alternate infinite;
+}
+
+@keyframes float {
+  10%{
+    transform: translateX(30px) rotate(30deg);
+  }
+  30%{
+    transform: translateX(150px) rotate(30deg);
+  }
+
+  60%{
+    transform: translateX(150px) translateY(-100px) rotate(50deg);
+  }
+}
+
+@keyframes ring {
+  10%{
+    transform : rotate(20deg);
+  }
+  20%{
+    transform : rotate(-20deg);
+  }
+  30%{
+    transform : rotate(25deg);
+  }
+  40%{
+    transform : rotate(-25deg);
+  }
+  50%{
+    transform : rotate(30deg);
+  }
+  60%{
+    transform : rotate(-30deg);
+  }
+  70%{
+    transform : rotate(25deg);
+  }
+  80%{
+    transform : rotate(-25deg);
+  }
+}
+
+.float i{
+  font-size : 150px;
+}
+
+.userMessages{
+  margin : auto;
+  padding : 20px;
+  color : white;
+  border-radius : 10px;
+  width : 70%;
+  background : rgba(255, 255, 255, 0.3);
+}
+
+.newHires, .online{
+  background : #4BB543;
+  border-radius : 50%;
+  padding : 22px;
+  font-size : 20px;
+  position: absolute;
+  top : -250px;
+  width : 70px;
+  height : 70px;
+  left : 5%;
+  color : white;
+  text-align: center;
+}
+
+.online{
+  left : 18%;
+}
+
+.newHires p, .online p {
+  font-size: 15px;
+  position: absolute;
+  top : 110%;
+  width : 100px;
+  text-align: center;
+  left : -20%;
+}
+
+.error-msg{
+  text-align: center;
+  color : red;
+  font-size : 14px;
+  padding : 5px;
+}
+
+.logout:hover{
+  color : red;
+}
+
+.admin-reply{
+  color: black;
+    padding: 5px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 14px;
+    width: 50%;
+    margin: 14px;
+}

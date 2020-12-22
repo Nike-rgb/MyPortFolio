@@ -1,0 +1,98 @@
+
+  <body style="background : white">
+    <div class="body-wrapper">
+      <header>
+
+        <div class="askMe">
+          <h3><i style="font-size : 35px" class="fas fa-envelope"></i><br>
+            Ask me Anything!!!</h3>
+
+          <form>
+            <input type="email" placeholder="Your email" required name="email" value="<%= (user)? user.email : '' %>" class="askMeEmail"/>
+            <input type="text" placeholder="Your question" required class="askMeQuestion"/>
+            <button>Ask Me</button>
+          </form>
+        </div>
+
+        <div class="hero-text">
+          <div class="hero-img">
+            <div class="alert-msgs" data-alert="<%=messages.alert%>"></div>
+           <i class="fas fa-user-ninja"></i>
+          </div>
+
+          <p>
+            I'm Nikesh. Your personal web-ninja, for everything web.<br>
+            From front-end designs to back-end management of your business, you can count on me.<br>
+            <a href="/hire" class="hireBtn">Hire Me!!</a>
+          </p>
+        </div>
+      </header>
+
+      <div class="body-container">
+        <div class="intro gap-4 sm:grid-cols-1 grid md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <i class="fas fa-blog"></i>
+            <h3>Proficient in nodeJs</h3>
+            <p>
+             NodeJs, one of the main reasons why Javascript is where it is today, is
+             one of the area I specialize in. This very website, is built on nodeJs.
+           </p>
+          </div>
+
+          <div>
+            <i class="fas fa-ethernet"></i>
+            <h3>MEAN stack designing</h3>
+            <p>
+             NodeJs, simply isn't enough to build a proficient web app. Modules like
+             Express, Angular and database(MongoDB) are a must if you wanna build a robust
+             app. I have been using these to build web apps for a long time now.
+           </p>
+          </div>
+
+          <div>
+            <i class="fas fa-network-wired"></i>
+            <h3>Exerience with web apps</h3>
+            <p>
+             In the field of web-developing, experience comes a long way. I have been
+             involved in designing websites and building web apps for a long time.
+             So it's safe to assume I know what I'm doing.
+           </p>
+          </div>
+        </div>
+
+        <div class="lazy-container">
+          <div class="lazy-loader lazy-a">
+            <div class="lazy-img">
+             <i class="fas fa-user-tie"></i>
+           </div>
+            <p>
+              Web designs, back-end programming-one guy.
+             </p>
+          </div>
+
+          <div class="lazy-loader lazy-b">
+            <div class="lazy-img">
+             <i class="fas fa-network-wired"></i>
+           </div>
+            <p>
+              High performing apps and web system. Enhance your business with
+              fantastic and interactive web apps.
+             </p>
+          </div>
+
+          <div class="lazy-loader lazy-c">
+            <div class="lazy-img">
+             <i class="fas fa-dollar-sign"></i>
+           </div>
+            <p>
+              You'll get your money's worth. Guarenteed.
+             </p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+  <script src="/js/index.js" defer></script>

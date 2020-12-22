@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> <%= title %> </title>
+    <link rel="stylesheet" href="/css/css.css"/>
+    <script src="https://kit.fontawesome.com/39408e3f6f.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="logo-wrapper">
+      <a class="logoLink" href=""><h1 class="logoA"><b style="color:#00acee">@</b>NikLepz</h1></a>
+    </div>
+    <div class="prof"> <img src="/img/profile.jpg"></div>
+
+    <nav>
+      <ul>
+        <li><a href="/"><i class="fas fa-home"></i>Home</a></li>|
+        <%if(req.url == '/') { %>
+        <li><a href="" class="about"><i class="fas fa-book"></i>About</a></li>|
+        <li><a href="" class="contact"><i class="fas fa-envelope"></i>Contact</a></li>|
+        <% } %>
+        <% if(!user) { %>
+        <li><a href="/login" class="login"><i class="fas fa-sign-in-alt"></i>Login</a></li>|
+        <li><a href="/register" class="register"><i class="fas fa-file-signature"></i>Register</a></li>
+        <%} else { %>
+        <li><a class="logout" href="/logout"><i class="fas fa-window-close"></i>Logout</a></li>
+        <% if(user.role == "admin") { %> |<li><a href="admin/messages"><i class="fas fa-user-tie"></i>Admin</a></li> <% } %>
+        <% } %>
+      </ul>
+    </nav>
+
+    <%- body %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.1/socket.io.js" integrity="sha512-vGcPDqyonHb0c11UofnOKdSAt5zYRpKI4ow+v6hat4i96b7nHSn8PQyk0sT5L9RECyksp+SztCPP6bqeeGaRKg==" crossorigin="anonymous"></script>
+    <script src="/js/js.js"></script>
+  </body>
+</html>

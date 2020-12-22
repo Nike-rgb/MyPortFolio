@@ -1,0 +1,11 @@
+<div style="min-height : 300px" class="form-container">
+  <form action="/login" method="POST">
+    <div class="error-msg"> <%= messages.error %></div>
+    <input name="email" value="<%= messages.email %>" type="email" required placeholder="Email">
+    <input name="password" type="password" required placeholder="***********">
+    <div class="createAccountMsg">
+      <a href="/register">Create an account</a>
+    </div>
+    <button class="hireBtn" type="submit">Log In</button>
+  </form>
+</div>
